@@ -1,8 +1,11 @@
 import "./Card.css"
 
-export default function Card() {
+export default function Card(props) {
+  console.log(props);
+    const item = props.item
+
     return <div className="card">
-    <h2>Rick Sanchez</h2>
+    <h2>{item.nome}</h2>
 
     <div className='tags'>
       <div className='tag'>Status: Vivo</div>
@@ -10,6 +13,6 @@ export default function Card() {
       <div className='tag'>Origem: Terra C-137</div>
     </div>
 
-    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+    <img src={item.imagemUrl}/>
   </div>
 }
